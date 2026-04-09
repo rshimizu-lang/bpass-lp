@@ -63,6 +63,7 @@ document.querySelectorAll('.btn-hero, .btn-primary, .btn-submit, .header-cta').f
 });
 
 // ─── スクロール入場（Intersection Observer） ─────────
+document.body.classList.add('js-ready');
 const revealEls = document.querySelectorAll('.reveal');
 const observer  = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
