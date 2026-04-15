@@ -561,9 +561,12 @@ body {
   .cta-mid-text { font-size: 13px; }
   .btn-primary { width: 100%; text-align: center; }
 
-  /* Proof */
+  /* Proof stats */
   .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .stat-num { font-size: 28px; }
+  .stat-card { padding: 16px 8px; }
+  .stat-num { font-size: 26px; }
+  .stat-unit { font-size: 13px; }
+  .stat-label { font-size: 10px; }
   .proof-img { height: 180px; }
 
   /* Proof trial */
@@ -571,16 +574,17 @@ body {
     grid-template-columns: 1fr;
   }
   .proof-trial-arrow {
-    display: none;
+    padding: 10px;
+    border-left: none;
+    border-right: none;
+    border-top: 0.5px solid var(--slate-200);
+    border-bottom: 0.5px solid var(--slate-200);
+    font-size: 20px;
   }
   .proof-trial-col { padding: 16px; }
-  .proof-trial-after {
-    border-top: 0.5px solid var(--slate-200);
-  }
-  .proof-trial-after ul li::before {
-    content: '→ ';
-    color: var(--gold);
-  }
+  .proof-trial-col ul li { font-size: 12px; word-break: keep-all; }
+  .proof-trial-after { border-top: 0.5px solid var(--slate-200); }
+  .proof-trial-result { font-size: 12px; padding: 14px 16px; }
 
   /* Plan */
   .plan-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -597,9 +601,8 @@ body {
 
 @media (max-width: 400px) {
   .feat-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  .stat-num { font-size: 24px; }
-  .stat-unit { font-size: 12px; }
+  .stat-num { font-size: 22px; }
+  .stat-unit { font-size: 11px; }
 }
 
 /* ─── ANIMATIONS ─── */
