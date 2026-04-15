@@ -166,7 +166,7 @@ body {
   width: 60px; height: 6px;
   background: rgba(255,255,255,0.15); border-radius: 3px;
 }
-.phone-mock-body { height: 340px; }
+.phone-mock-body { height: auto; }
 
 /* ─── STRIP ─── */
 .strip {
@@ -314,7 +314,7 @@ body {
 }
 .feat-name { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
 .feat-desc { font-size: 12px; color: var(--slate-600); line-height: 1.65; }
-.feat-screen { height: 180px; margin-top: 4px; }
+.feat-screen { height: auto; margin-top: 4px; }
 
 /* ─── CTA MID ─── */
 .cta-mid {
