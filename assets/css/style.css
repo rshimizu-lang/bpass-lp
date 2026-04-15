@@ -524,18 +524,82 @@ body {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 640px) {
-  .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 48px 28px; }
+  /* Hero */
+  .hero { padding: 0; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 40px 24px 36px;
+    gap: 28px;
+  }
   .hero-visual { display: none; }
+  .hero-h1 { font-size: 32px; }
+  .hero-badge { font-size: 11px; }
+  .btn-hero { width: 100%; text-align: center; padding: 14px 20px; }
+
+  /* Strip */
   .strip-inner { animation-duration: 12s; }
-  .feat-grid { grid-template-columns: 1fr 1fr; }
-  .plan-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  .cta-mid-inner { flex-direction: column; }
-  .footer-inner { flex-direction: column; }
-  .solution-card { padding: 36px 24px; }
+
+  /* Sections */
+  .issue, .solution, .features, .proof, .plan, .faq { padding: 56px 0; }
+
+  /* Quote */
+  .quote-item { border-radius: var(--radius-sm); }
+
+  /* Solution */
+  .solution-card { padding: 32px 20px; }
+  .solution-headline { font-size: 22px; }
+
+  /* Features */
+  .feat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feat-card { padding: 16px 12px; }
+  .feat-name { font-size: 12px; }
+  .feat-desc { font-size: 11px; }
+
+  /* CTA mid */
+  .cta-mid-inner { flex-direction: column; gap: 14px; }
+  .cta-mid-text { font-size: 13px; }
+  .btn-primary { width: 100%; text-align: center; }
+
+  /* Proof */
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .stat-num { font-size: 28px; }
+  .proof-img { height: 180px; }
+
+  /* Proof trial */
+  .proof-trial-grid {
+    grid-template-columns: 1fr;
+  }
+  .proof-trial-arrow {
+    display: none;
+  }
+  .proof-trial-col { padding: 16px; }
+  .proof-trial-after {
+    border-top: 0.5px solid var(--slate-200);
+  }
+  .proof-trial-after ul li::before {
+    content: '→ ';
+    color: var(--gold);
+  }
+
+  /* Plan */
+  .plan-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* CTA Final */
+  .cta-final { padding: 56px 0 64px; }
+  .cta-final-h2 { font-size: 26px; }
+  .monitor-badge { font-size: 11px; padding: 8px 14px; }
+  .btn-submit { font-size: 14px; padding: 15px 20px; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; gap: 16px; }
 }
+
 @media (max-width: 400px) {
   .feat-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .stat-num { font-size: 24px; }
+  .stat-unit { font-size: 12px; }
 }
 
 /* ─── ANIMATIONS ─── */
