@@ -3,7 +3,7 @@ layer: operations
 revision_policy:
   frequency: as_needed
   authority: claude_with_fact_check
-last_reviewed: 2026-05-01
+last_reviewed: 2026-05-12
 ---
 
 # bull-don.lp
@@ -29,4 +29,7 @@ GitHub Pagesで lp.bull-don.com に公開中。
 - HTTPSは強制設定済み
 
 ## 関連
-詳細仕様は `C:\dev\bulldon\_shared\` を参照
+
+- 詳細仕様: `C:\dev\bulldon\_shared\`
+- 資料請求フォームのバックエンドGAS: `C:\dev\bulldon\bull-don.lp-backend\`（rshimizu-lang/bull-don.lp-backend）
+  - `assets/js/form.js` の `GAS_ENDPOINT` がそのWebアプリのデプロイURL
