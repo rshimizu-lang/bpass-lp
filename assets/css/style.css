@@ -496,6 +496,58 @@ body {
 .form-privacy { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.75; }
 .privacy-link { color: rgba(197,165,90,0.6); text-decoration: underline; }
 
+/* Form checkbox group (Phase D-4-β) */
+.form-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 0.5px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--white);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-checkbox-label:hover {
+  border-color: rgba(197,165,90,0.6);
+}
+.form-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+}
+.form-checkbox:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.form-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--navy);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
 .form-success { max-width: 500px; text-align: center; padding: 48px 0; }
 .success-title {
   font-family: var(--font-display);

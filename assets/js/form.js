@@ -1,5 +1,18 @@
 // ─── GAS エンドポイント ───────────────────────────────
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwukydb5lS7_JyZYJpOiBMJtCNrz59FlOLYqpTeJGsTEVf03R5Y5xbelEWG_RZLBwZAVw/exec';
+// Phase D-4-β: 営業エンジン dev URL に切替。本番切替は Phase D-4-δ で実施。
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbys570cuMyrN26KstaUvY9J_1lrWS1C_S3G9XTSlAgmae2bn14w_UQIykyd7Hcg-Hx2Jg/exec';
+
+// ─── ?lid= から lead_id 受信 ─────────────────────────
+// 営業メール経由訪問者の lead_id を hidden field に自動セット
+// UI 上の可視サインは出さない（清水判断）
+const leadIdInput = document.getElementById('lead_id');
+if (leadIdInput) {
+  const params = new URLSearchParams(window.location.search);
+  const lid = params.get('lid');
+  if (lid) {
+    leadIdInput.value = lid;
+  }
+}
 
 // ─── フォーム送信 ────────────────────────────────────
 const form      = document.getElementById('requestForm');
@@ -13,6 +26,10 @@ if (form) {
     const name    = document.getElementById('name').value.trim();
     const email   = document.getElementById('email').value.trim();
     const plan    = document.getElementById('plan').value;
+    const areas   = Array.from(
+      document.querySelectorAll('input[name="areas"]:checked')
+    ).map(el => el.value);
+    const lead_id = leadIdInput ? leadIdInput.value : '';
 
     if (!company || !name || !email) {
       alert('会社名・氏名・メールアドレスは必須です。');
@@ -31,7 +48,7 @@ if (form) {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ company, name, email, plan }),
+        body: JSON.stringify({ company, name, email, plan, areas, lead_id }),
       });
       form.style.display = 'none';
       formSuccess.style.display = 'block';

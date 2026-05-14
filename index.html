@@ -300,9 +300,32 @@
             <option value="">選択してください</option>
             <option value="LICENSE">LICENSE</option>
             <option value="GOVERNANCE">GOVERNANCE</option>
-            <option value="undecided">まだ決めていない</option>
+            <option value="BOTH">両方</option>
+            <option value="UNDECIDED">まだ決めていない</option>
           </select>
         </div>
+        <div class="form-group">
+          <span class="form-label">ご興味のある領域（複数選択可）</span>
+          <div class="form-checkbox-group">
+            <label class="form-checkbox-label">
+              <input class="form-checkbox" type="checkbox" name="areas" value="採用広報">
+              <span>採用広報・組織風土発信</span>
+            </label>
+            <label class="form-checkbox-label">
+              <input class="form-checkbox" type="checkbox" name="areas" value="業務効率化">
+              <span>業務効率化・運営工数削減</span>
+            </label>
+            <label class="form-checkbox-label">
+              <input class="form-checkbox" type="checkbox" name="areas" value="健康経営認定">
+              <span>健康経営認定・スポーツエール</span>
+            </label>
+            <label class="form-checkbox-label">
+              <input class="form-checkbox" type="checkbox" name="areas" value="その他">
+              <span>その他</span>
+            </label>
+          </div>
+        </div>
+        <input type="hidden" id="lead_id" name="lead_id" value="">
         <button class="btn-submit" type="submit" id="submitBtn">資料を無料で受け取る</button>
         <p class="form-privacy">ご入力いただいた情報は、資料送付および弊社サービスに関するご案内に利用します。<a href="privacy.html" class="privacy-link">プライバシーポリシー</a></p>
       </form>
